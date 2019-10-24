@@ -2,7 +2,7 @@
 #include <string>
 
 
-std::string which;
+char which;
 long long int t;
 long long int sum;
 long long int a;
@@ -11,12 +11,14 @@ long long int x;
 long long int y;
 long long int z;
 long long int sub;
+int m2;
 bool e;
 int main() {
 	e = 0;
-	std::cout << "do you want to multiply, add, subtract, divide, calculate the power, factorize formulas or calculate prime numbers? you can also type t to see if your device is compatible. possible options: m a s d t p f r" << std::endl;
+	std::cout << "https://github.com/rickdegraaf1/ultracalculator/releases" << std::endl;
+	std::cout << "do you want to multiply, add, subtract, divide, calculate the power, factorize formulas or calculate prime numbers?" << std::endl <<"you can also type t to see if your device is compatible. possible options : m a s d t p f r" << std::endl;
 	std::cin >> which;
-	if (which[0] == 'm') {
+	if (which == 'm') {
 		std::cout << "enter the numbers to multiply" << std::endl;
 		std::cin >> a;
 		std::cin >> b;
@@ -24,28 +26,28 @@ int main() {
 		std::cout << sum << std::endl;
 
 	}
-	else if (which[0] == 'a') {
+	else if (which == 'a') {
 		std::cout << "enter the numbers to add" << std::endl;
 		std::cin >> a;
 		std::cin >> b;
 		sum = a + b;
 		std::cout << sum << std::endl;
 	}
-	else if (which[0] == 's') {
+	else if (which == 's') {
 		std::cout << "enter the numbers to subtract" << std::endl;
 		std::cin >> a;
 		std::cin >> b;
 		sum = a - b;
 		std::cout << sum << std::endl;
 	}
-	else if (which[0] == 'd') {
+	else if (which == 'd') {
 		std::cout << "enter the numbers to divide" << std::endl;
 		std::cin >> a;
 		std::cin >> b;
 		sum = a / b;
 		std::cout << sum << std::endl;
 	}
-	else if (which[0] == 't') {
+	else if (which == 't') {
 		t = 2;
 		std::cout << "activated test mode" << std::endl;
 		std::cout << "this mode shows if your device is compatible with a 64 bit calculator. if the last number not equal to zero is -9223372036854775808 then your device is compatible" << std::endl;
@@ -58,7 +60,7 @@ int main() {
 		}
 
 	}
-	else if (which[0] == 'p') {
+	else if (which == 'p') {
 		std::cout << "enter the numbers to calculate the power" << std::endl;
 		std::cin >> a;
 		std::cin >> b;
@@ -69,10 +71,13 @@ int main() {
 		}
 		std::cout << sub << std::endl;
 	}
-	else if (which[0] == 'f') {
+	else if (which == 'f') {
 		std::cout << "enter the last number, press enter, enter the second number" << std::endl;
 		std::cin >> z;
 		std::cin >> x;
+		if (z > 0 && 0 > x) {
+			m2 = 1;
+		}
 		y = x;
 		while (true) {
 
@@ -85,10 +90,15 @@ int main() {
 				std::cin >> x;
 				return 0;
 			}
-			x--;
+			if (m2 == 0) {
+				x--;
+			}
+			else {
+				x++;
+			}
 		}
 	}
-	else if (which[0] = 'r') { 
+	else if (which == 'r') { 
 		std::cout << "enter the number to start at, then enter the number to stop at" << std::endl;
 		std::cin >> a;
 		std::cin >> b;
