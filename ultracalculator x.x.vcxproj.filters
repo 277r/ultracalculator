@@ -18,9 +18,15 @@
     <ClCompile Include="ultracalculator x.x.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="floatfunctions.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="functions.h">
+    <ClInclude Include="intfunctions.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="floatfunctions.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
